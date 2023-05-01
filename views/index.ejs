@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/styles.css" />
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<header>
+  <h1>Sale Sharks season so far</h1>
+  <p>Recap the journey to the first home semi-final since 2006!</p>
+</header>
+<% fixturesByMonth.forEach(monthData => { %>
+  <div class="month-container"  data-aos="fade-up">
+    <div class="month"><%= monthData.month %></div>
+    <div class="fixtures-container">
+      <% monthData.fixtures.forEach((fixture, index) => { %>
+        <div class="fixture" data-index="<%= index %>">
+          <span><%= fixture.opponent %></span>
+          <span><%= fixture.result %></span>
+        </div>
+      <% }); %>
+    </div>
+    <div class="details-container">
+      <% monthData.fixtures.forEach((fixture, index) => { %>
+        <div class="fixture-details" <% if (index !== 0) { %>style="display: none;"<% } %>>
+          <%= fixture.report || "some text" %>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+<% }); %>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script><script src="/code.js"></script>
