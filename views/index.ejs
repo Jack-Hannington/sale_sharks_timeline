@@ -1,14 +1,13 @@
 
 <%- include('partials/header') %>
-<link rel="stylesheet" href="/styles.css" />
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 <header>
   <h1>Sale Sharks season so far</h1>
   <p>Recap the journey to the first home semi-final since 2006!</p>
 </header>
 <% fixturesByMonth.forEach(monthData => { %>
   <div class="month-container"  data-aos="fade-up">
-    <div class="month"><%= monthData.month %></div>
+    <div class="month"><%= monthData.month %></div> 
     <div class="fixtures-container">
       <% monthData.fixtures.forEach((fixture, index) => { %>
         <div class="fixture" data-index="<%= index %>">
@@ -20,7 +19,7 @@
     <div class="details-container">
       <% monthData.fixtures.forEach((fixture, index) => { %>
         <div class="fixture-details" <% if (index !== 0) { %>style="display: none;"<% } %>>
-          <%= fixture.report || "match report goes ehre" %>
+          <%= fixture.report || "match report" %>
         </div>        
       <% }); %>
     </div>

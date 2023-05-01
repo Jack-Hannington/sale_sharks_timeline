@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+  <h1>Add New Fixture</h1>
+  <form action="/fixtures/new" method="POST">
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required><br>
+    
+    <label for="opponent">Opponent:</label>
+    <input type="text" id="opponent" name="opponent" required><br>
+    
+    <label for="result">Result:</label>
+    <input type="text" id="result" name="result" required><br>
+    
+    <!-- Add the rest of the input fields for home_score, away_score,location, report, tries, conversions, lineup, month etc. -->
+    <label for="home_score">Home Score:</label>
+    <input type="number" id="home_score" name="home_score" required><br>
+    <label for="home_score">Home Score:</label>
+    <input type="number" id="away_score" name="away_score" required><br>
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" required><br>
+    <label for="report">Report:</label>
+    <input type="text" id="report" name="report" required><br>
+    <label for="tries">Tries:</label>
+    <input type="text" id="tries" name="tries" required><br>
+    <label for="conversions">Conversions:</label>
+    <input type="text" id="conversions" name="conversions" required><br>
+    <label for="lineup">Lineup:</label>
+    <input type="text" id="lineup" name="lineup" required><br>
+    <label for="month">Month:</label>
+    <input type="text" id="month" name="month" required><br>
+    <label for="month">I was there:</label>
+    <input type="number" id="i_was_there" name="i_was_there" required><br>
+    <label for="month">Comments:</label>
+    <input type="text" id="comments" name="comments" required><br>
+
+    <input type="submit" value="Add Fixture">
+  </form>
+</body>
+</html>
