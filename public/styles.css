@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-  height:2000px;
+    height:2000px;
 }
 
 .month-container {
@@ -10,11 +10,11 @@ body {
   flex-direction: column;
   height:400px;
   transition: 0.5s ease-in;
+  background-color:white;
 }
 
 .month-container.active {
     background:white;
-    opacity: 1;
     border:1px solid blue;
 
 }
@@ -23,6 +23,7 @@ body {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
+  background-color: white;
 }
 
 
@@ -31,6 +32,7 @@ body {
   border-bottom: 1px solid #ccc;
   position:sticky;
   top:0;
+  background-color: white;
 }
 
 
@@ -46,9 +48,16 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    border-bottom: 1px solid #eee;
+    border: 1px solid #eee;
 }
 
 .fixture:last-child {
     border-bottom: none;
 }
+
+
+.preserve-line-breaks {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  

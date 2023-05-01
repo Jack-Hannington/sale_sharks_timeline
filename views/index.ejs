@@ -1,3 +1,5 @@
+
+<%- include('partials/header') %>
 <link rel="stylesheet" href="/styles.css" />
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <header>
@@ -18,8 +20,8 @@
     <div class="details-container">
       <% monthData.fixtures.forEach((fixture, index) => { %>
         <div class="fixture-details" <% if (index !== 0) { %>style="display: none;"<% } %>>
-          <%= fixture.report || "some text" %>
-        </div>
+          <%= fixture.report || "match report goes ehre" %>
+        </div>        
       <% }); %>
     </div>
   </div>
