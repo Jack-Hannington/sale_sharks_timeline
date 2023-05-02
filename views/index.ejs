@@ -19,7 +19,7 @@
     <div class="details-container">
       <% monthData.fixtures.forEach((fixture, index) => { %>
         <div class="fixture-details" <% if (index !== 0) { %>style="display: none;"<% } %>>
-          <%= fixture.report || "match report" %>
+          <p><%= fixture.report || "match report" %></p>
           <p class="fixture-heading"><span class="iconify" data-icon="fluent-mdl2:rugby"></span>Tries</p>
           <p><%= fixture.tries  %></p>
           <p class="fixture-heading"><span class="iconify" data-icon="game-icons:rugby-conversion"></span>Conversions</p>

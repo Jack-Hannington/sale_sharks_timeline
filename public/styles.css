@@ -1,8 +1,24 @@
+:root {
+  --default-padding: 1rem;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Inter, Arial, sans-serif;
     margin: 0;
     padding: 0;
     height:2000px;
+}
+
+p {
+  line-height: 1.6rem;
+}
+
+header {
+  padding:var(--default-padding);
+}
+
+ .month {
+  padding:var(--default-padding);
 }
 
 .month-container {
@@ -16,7 +32,10 @@ body {
 .month-container.active {
     background:white;
     border:1px solid blue;
+    background:#f9f9f9;
 }
+
+
 
 .fixtures-container {
   display: flex;
@@ -27,7 +46,6 @@ body {
 
 
 .month {
-  padding: 1rem;
   border-bottom: 1px solid #ccc;
   position:sticky;
   top:0;
