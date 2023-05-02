@@ -30,28 +30,12 @@ async function getMatches() {
     }
     return matches;
 }
-
-async function addFixture(fixture) {
-    const { data, error } = await supabase
-      .from('matches')
-      .insert([
-        fixture
-      ]);
-  
-    if (error) {
-      console.error('Error adding fixture:', error);
-      return null;
-    }
-  
-    // If data is null or empty, return the input fixture instead of data[0]
-    return data && data.length > 0 ? data[0] : fixture;
-  }
-  
   
 
 app.get('/', async (req, res) => {
     const matches = await getMatches();
-  
+
+   // Group matches by month using reduce to group them in the template
     const fixturesByMonth = matches.reduce((acc, fixture) => {
       if (!acc[fixture.month]) {
         acc[fixture.month] = { month: fixture.month, fixtures: [] };
@@ -68,6 +52,20 @@ app.get('/', async (req, res) => {
     res.render('new');
   });
   
+  async function addFixture(fixture) {
+    const { data, error } = await supabase
+      .from('matches')
+      .insert([
+        fixture
+      ]);
+  
+    if (error) {
+      console.error('Error adding fixture:', error);
+      return null;
+    }
+    // If data is null or empty, return the input fixture instead of data[0]
+    return data && data.length > 0 ? data[0] : fixture;
+  }
 
   app.post('/fixtures/new', async (req, res) => {
     const newFixture = req.body;

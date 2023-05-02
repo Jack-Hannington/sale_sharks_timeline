@@ -20,6 +20,14 @@
       <% monthData.fixtures.forEach((fixture, index) => { %>
         <div class="fixture-details" <% if (index !== 0) { %>style="display: none;"<% } %>>
           <%= fixture.report || "match report" %>
+          <p class="fixture-heading"><span class="iconify" data-icon="fluent-mdl2:rugby"></span>Tries</p>
+          <p><%= fixture.tries  %></p>
+          <p class="fixture-heading"><span class="iconify" data-icon="game-icons:rugby-conversion"></span>Conversions</p>
+          <p><%= fixture.conversions  %></p>
+          <p class="fixture-heading"><span class="iconify" data-icon="mdi:people-group-outline"></span>Lineup</p>
+          <p><%= fixture.lineup  %></p>
+          <p class="fixture-heading"><span class="iconify" data-icon="fluent-mdl2:rugby"></span>Highlights</p>
+          <p><%= fixture.highlights  %></p>
         </div>        
       <% }); %>
     </div>

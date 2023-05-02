@@ -8,7 +8,7 @@ body {
 .month-container {
   display: flex;
   flex-direction: column;
-  height:400px;
+  min-height:400px;
   transition: 0.5s ease-in;
   background-color:white;
 }
@@ -16,7 +16,6 @@ body {
 .month-container.active {
     background:white;
     border:1px solid blue;
-
 }
 
 .fixtures-container {
