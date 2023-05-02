@@ -7,12 +7,13 @@
 </header>
 <% fixturesByMonth.forEach(monthData => { %>
   <div class="month-container"  data-aos="fade-up">
-    <div class="month"><%= monthData.month %></div> 
+    <div class="month"><p><%= monthData.month %></p></div> 
     <div class="fixtures-container">
       <% monthData.fixtures.forEach((fixture, index) => { %>
         <div class="fixture" data-index="<%= index %>">
           <span><%= fixture.opponent %></span>
-          <span><%= fixture.result %></span>
+          <span style="margin-left:4px;"><%= fixture.home_score %></span>-
+          <span><%= fixture.away_score %></span>
         </div>
       <% }); %>
     </div>
@@ -28,6 +29,10 @@
           <p><%= fixture.lineup  %></p>
           <p class="fixture-heading"><span class="iconify" data-icon="fluent-mdl2:rugby"></span>Highlights</p>
           <p><%= fixture.highlights  %></p>
+          <div class="fixture-buttons">
+            <button><span class="iconify" data-icon="bi:hand-thumbs-up"></span>I was there</button>
+            <button>Comments</button>
+          </div>
         </div>        
       <% }); %>
     </div>

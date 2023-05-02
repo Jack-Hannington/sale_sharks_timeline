@@ -13,6 +13,18 @@ p {
   line-height: 1.6rem;
 }
 
+button{
+  padding:8px 16px;
+  border:1px solid black;
+  font-family: inherit;
+  background:white;
+}
+
+.iconify {
+  margin-top:-2px;
+  margin-right:4px;
+}
+
 header {
   padding:var(--default-padding);
 }
@@ -32,7 +44,6 @@ header {
 .month-container.active {
     background:white;
     border:1px solid blue;
-    background:#f9f9f9;
 }
 
 
