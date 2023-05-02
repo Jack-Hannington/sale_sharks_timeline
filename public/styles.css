@@ -53,6 +53,8 @@ header {
   overflow-x: auto;
   white-space: nowrap;
   background-color: white;
+  position: sticky;
+  top:90.39px;
 }
 
 
