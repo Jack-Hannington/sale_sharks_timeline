@@ -46,11 +46,13 @@ header {
   min-height:400px;
   transition: 0.5s ease-in;
   background-color:white;
+  opacity:0.5!important;
 }
 
 .month-container.active {
     background:white;
     border:1px solid blue;
+    opacity:1!important;
 }
 
 
