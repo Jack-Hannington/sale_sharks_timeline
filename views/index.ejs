@@ -11,7 +11,7 @@
     <div class="fixtures-container">
       <% monthData.fixtures.forEach((fixture, index) => { %>
         <div class="fixture" data-index="<%= index %>">
-          <span><%= fixture.opponent %></span>
+          <span><img class="opponent-logo" src="<%=fixture.logo%>"></span>
           <span style="margin-left:4px;"><%= fixture.home_score %></span>-
           <span><%= fixture.away_score %></span>
         </div>

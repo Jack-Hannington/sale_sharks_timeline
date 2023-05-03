@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+<div class="container">
+  <h1>Edit Fixture</h1>
+
+<form action="/fixtures/edit/<%= match.id %>" method="POST">
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" value="<%= match.date %>" required><br>
+    
+    <label for="opponent">Opponent:</label>
+    <input type="text" id="opponent" name="opponent" value="<%= match.opponent %>" required><br>
+    <label for="logo">Crest url:</label>
+    <input type="text" id="logo" name="logo" value="<%= match.logo %>" required><br>
+    
+    <label for="result">Result:</label>
+    <input type="text" id="result" name="result" value="<%= match.result %>" required><br>
+    
+    <!-- Add the rest of the input fields for home_score, away_score,location, report, tries, conversions, lineup, month etc., and prefill the values -->
+    <label for="home_score">Home Score:</label>
+    <input type="number" id="home_score" name="home_score" value="<%= match.home_score %>" required><br>
+    <label for="home_score">Away Score:</label>
+    <input type="number" id="away_score" name="away_score" value="<%= match.away_score %>" required><br>
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" value="<%= match.location %>" required><br>
+    <label for="report">Report:</label>
+    <input type="text" id="report" name="report" value="<%= match.report %>" required><br>
+    <label for="tries">Tries:</label>
+    <input type="text" id="tries" name="tries" value="<%= match.tries %>" required><br>
+    <label for="conversions">Conversions:</label>
+    <input type="text" id="conversions" name="conversions" value="<%= match.conversions %>" required><br>
+    <label for="lineup">Lineup:</label>
+    <textarea id="lineup" name="lineup" required><%= match.lineup %></textarea><br>
+    <label for="month">Month:</label>
+    <select id="month" name="month" required>
+      <!-- Add 'selected' attribute if the current month matches match.month -->
+      <% const months = ['September', 'October', 'November', 'December', 'January', 'February', 'March', 'April', 'May'];
+         months.forEach(month => { %>
+          <option value="<%= month %>" <%= month === match.month ? 'selected' : '' %>><%= month %></option>
+      <% }) %>
+    </select><br>
+    <label for="month">I was there:</label>
+    <input type="number" id="i_was_there" name="i_was_there" value="<%= match.i_was_there %>" required><br>
+    <label for="month">Comments:</label>
+    <input type="text" id="comments" name="comments" value="<%= match.comments %>" required><br>
+
+    <input type="submit" value="Update Fixture">
+  </form>
+</div>
+</body>
+</html>
+
+

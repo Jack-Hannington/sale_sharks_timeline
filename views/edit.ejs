@@ -1,1 +1,5 @@
-<%- include('partials/header') %>
+<% matches.forEach(match => { %>
+    <!-- Display match details -->
+    <a href="/fixtures/edit/<%= match.id %>">Edit</a>
+  <% }); %>
+  

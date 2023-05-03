@@ -1,14 +1,23 @@
-document.querySelectorAll('.fixture').forEach(fixture => {
-    fixture.addEventListener('click', () => {
-      const index = fixture.dataset.index;
-      const detailsContainer = fixture.parentElement.nextElementSibling;
-      const fixtureDetails = detailsContainer.children[index];
-  
-      Array.from(detailsContainer.children).forEach((details, i) => {
-        details.style.display = i === parseInt(index) ? 'block' : 'none';
-      });
-    });
+function showFixtureDetails(detailsContainer, index) {
+  Array.from(detailsContainer.children).forEach((details, i) => {
+    details.style.display = i === parseInt(index) ? 'block' : 'none';
   });
+}
+document.querySelectorAll('.fixture').forEach(fixture => {
+  fixture.addEventListener('click', () => {
+    const index = fixture.dataset.index;
+    const detailsContainer = fixture.parentElement.nextElementSibling;
+    showFixtureDetails(detailsContainer, index);
+  });
+});
+document.querySelectorAll('.month-container').forEach(monthContainer => {
+  const firstFixture = monthContainer.querySelector('.fixture');
+  if (firstFixture) {
+    const detailsContainer = firstFixture.parentElement.nextElementSibling;
+    showFixtureDetails(detailsContainer, 0);
+  }
+});
+
 
   document.addEventListener('DOMContentLoaded', () => {
     const monthElements = document.querySelectorAll('.month-container');

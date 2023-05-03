@@ -20,6 +20,13 @@ button{
   background:white;
 }
 
+/* Layout */
+
+.container {
+  max-width: 1200px;
+  margin:auto;
+}
+
 .iconify {
   margin-top:-2px;
   margin-right:4px;
@@ -90,4 +97,37 @@ header {
     white-space: pre-wrap;
     word-wrap: break-word;
   }
-  
+
+
+  /* Forms */
+
+  input, textarea, select {
+    width:100%;
+    font-family: Inherit;
+    font-size: 16px;
+    display: block;
+    padding:10px;
+    margin-top: 4px;
+  }
+
+
+  /* Media */
+
+  img{
+    max-width:100%;
+  }
+.opponent-logo {
+  width: 25px;
+  object-fit: contain;
+  margin-right: 1rem;
+}
+
+  /* Media queries */
+@media screen and (min-width:1300px){
+  container {
+    max-width:1400px;
+  }
+  .opponent-logo {
+    width:45px;
+  }
+}  

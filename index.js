@@ -77,14 +77,102 @@ app.get('/', async (req, res) => {
       res.status(500).send('Error adding fixture');
     }
   });
+
+
+  async function getMatchById(id) {
+    const { data, error } = await supabase
+      .from('matches')
+      .select('*')
+      .eq('id', id)
+      .single();
   
+    if (error) {
+      console.error('Error fetching match:', error);
+    }
+  
+    return data;
+  }
+  
+  
+  async function updateMatch(id, updatedData) {
+    const { data, error } = await supabase
+      .from('matches')
+      .update(updatedData)
+      .match({ id });
+  
+    if (error) {
+      console.error('Error updating match:', error);
+      return null;
+    }
+  
+    // If data is empty, return the input updatedData instead of data[0]
+    return data && data.length > 0 ? data[0] : updatedData;
+  }
+  
+  
+  async function deleteMatch(id) {
+    const { data, error } = await supabase
+      .from('matches')
+      .delete()
+      .match({ id });
+  
+    if (error) {
+      console.error('Error deleting match:', error);
+      return null;
+    }
+  
+    return data && data.length > 0 ? data[0] : null;
+  }
   
 
-//edit route
+// Add the edit and delete routes
+
 app.get('/edit', async (req, res) => {
-        const matches = await getMatches();
-        res.render('edit', { matches });
+  const matches = await getMatches();
+  res.render('edit', { matches });
 });
+
+
+// Edit route
+// edit route with ID parameter
+app.get('/fixtures/edit/:id', async (req, res) => {
+  const matchId = req.params.id;
+  const match = await getMatchById(matchId);
+
+  if (match) {
+    res.render('edit-form', { match });
+  } else {
+    res.status(404).send('Match not found');
+  }
+});
+
+
+
+app.post('/fixtures/edit/:id', async (req, res) => {
+  const matchId = req.params.id;
+  const updatedData = req.body;
+  const updatedMatch = await updateMatch(matchId, updatedData);
+
+  if (updatedMatch) {
+    res.redirect('/');
+  } else {
+    res.status(500).send('Error updating match');
+  }
+});
+
+
+// Delete route
+app.post('/delete/:id', async (req, res) => {
+  const matchId = req.params.id;
+  const deletedMatch = await deleteMatch(matchId);
+
+  if (deletedMatch) {
+    res.redirect('/');
+  } else {
+    res.status(500).send('Error deleting match');
+  }
+});
+
   
 
 app.listen(port, () => {

@@ -1,4 +1,5 @@
 <%- include('partials/header') %>
+<div class="container">
   <h1>Add New Fixture</h1>
   <form action="/fixtures/new" method="POST">
     <label for="date">Date:</label>
@@ -6,6 +7,8 @@
     
     <label for="opponent">Opponent:</label>
     <input type="text" id="opponent" name="opponent" required><br>
+    <label for="logo">Crest url:</label>
+    <input type="text" id="logo" name="logo" required><br>
     
     <label for="result">Result:</label>
     <input type="text" id="result" name="result" required><br>
@@ -13,7 +16,7 @@
     <!-- Add the rest of the input fields for home_score, away_score,location, report, tries, conversions, lineup, month etc. -->
     <label for="home_score">Home Score:</label>
     <input type="number" id="home_score" name="home_score" required><br>
-    <label for="home_score">Home Score:</label>
+    <label for="home_score">Away Score:</label>
     <input type="number" id="away_score" name="away_score" required><br>
     <label for="location">Location:</label>
     <input type="text" id="location" name="location" required><br>
@@ -24,9 +27,19 @@
     <label for="conversions">Conversions:</label>
     <input type="text" id="conversions" name="conversions" required><br>
     <label for="lineup">Lineup:</label>
-    <input type="text" id="lineup" name="lineup" required><br>
+    <textarea id="lineup" name="lineup" required></textarea><br>
     <label for="month">Month:</label>
-    <input type="text" id="month" name="month" required><br>
+    <select id="month" name="month" required>
+      <option value="September">September</option>
+      <option value="October">October</option>
+      <option value="November">November</option>
+      <option value="December">December</option>
+      <option value="January">January</option>
+      <option value="February">February</option>
+      <option value="March">March</option>
+      <option value="April">April</option>
+      <option value="May">May</option>
+    </select><br>
     <label for="month">I was there:</label>
     <input type="number" id="i_was_there" name="i_was_there" required><br>
     <label for="month">Comments:</label>
@@ -34,5 +47,6 @@
 
     <input type="submit" value="Add Fixture">
   </form>
+</div>
 </body>
 </html>
