@@ -1,17 +1,24 @@
 :root {
-  --default-padding: 1rem;
+  --default-padding: 10px;
 }
 
 body {
-    font-family: Rubik, Inter, Arial, sans-serif;
+    font-family: Inter, Arial, sans-serif;
     margin: 0;
     padding: 0;
     min-height:3000px;
     margin:auto;
+    color:#0b1d2e;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Lexend;
 }
 
 p {
-  line-height: 1.6rem;
+  line-height: 2rem;
+  font-size: 18px;
+  margin-bottom:10px;
 }
 
 button{
@@ -75,12 +82,13 @@ header {
   white-space: nowrap;
   background-color: white;
   position: sticky;
-  top:90.39px;
+  top:54px;
+  gap: 10px;
+    padding: 10px;
 }
 
 
 .month {
-  border-bottom: 1px solid #ccc;
   position:sticky;
   top:0;
   background-color: white;

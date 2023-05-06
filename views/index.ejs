@@ -9,7 +9,7 @@
 </header>
 <% fixturesByMonth.forEach(monthData => { %>
   <div class="month-container"  data-aos="fade-up">
-    <div class="month"><p><%= monthData.month %></p></div> 
+    <div class="month"><h3><%= monthData.month %></h3></div> 
     <div class="fixtures-container">
       <% monthData.fixtures.forEach((fixture, index) => { %>
         <div class="fixture" data-index="<%= index %>">
