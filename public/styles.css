@@ -3,10 +3,11 @@
 }
 
 body {
-    font-family: Inter, Arial, sans-serif;
+    font-family: Rubik, Inter, Arial, sans-serif;
     margin: 0;
     padding: 0;
     min-height:3000px;
+    margin:auto;
 }
 
 p {
@@ -33,7 +34,18 @@ button{
 }
 
 header {
-  padding:var(--default-padding);
+  padding: var(--default-padding);
+  color: white;
+  background-image: url('https://cdduewtpfvhhhogaybjk.supabase.co/storage/v1/object/sign/sale_sharks_images/Match%20images/Group%2024%20(2).png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzYWxlX3NoYXJrc19pbWFnZXMvTWF0Y2ggaW1hZ2VzL0dyb3VwIDI0ICgyKS5wbmciLCJpYXQiOjE2ODM0MTA1NTMsImV4cCI6MTcxNDk0NjU1M30.P9FKI_SM5zfh_eZ41-jfOjpxoQzFjOFf2GKNRh1e-sI&t=2023-05-06T22%3A02%3A33.032Z');
+  background-repeat: no-repeat;
+  background-position: top right;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-size: cover;
+  background-color: linear-gradient(89.19deg, #040C49 -7.3%, rgba(4, 4, 73, 0) 127.65%);
+  height: 450px;
+  justify-content: center;
 }
 
  .month {
@@ -86,14 +98,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 8px 12px;
     border: 1px solid #eee;
 }
 
-.fixture:last-child {
-    border-bottom: none;
+.fixture:hover {
+  background-color: #eee;
+  cursor: pointer;
 }
-
 
 .preserve-line-breaks {
     white-space: pre-wrap;
@@ -131,5 +143,11 @@ header {
   }
   .opponent-logo {
     width:45px;
+  }
+
+  header {
+    background-image: none;
+    height: auto;
+    background-color: #040C49;
   }
 }  
